@@ -1,0 +1,70 @@
+Section I
+
+1>  Create table DEPT(
+	DEPTNO int,
+	DNAME varchar(15),
+	LOC varchar(10));
+
+	insert into DEPT values
+	(10, 'ACCOUNTING', 'NEW YORK'),
+	(20, 'RESEARCH', 'DALLAS'),
+	(30, 'SALES', 'CHICAGO'),
+	(40, 'OPERATIONS', 'BOSTON');
+
+	select * from dept;
+-------------------------------------------------
+2>	Create table EMP(
+	EMPNO int(4),
+	ENAME varchar(10),
+	JOB varchar(9),
+	HIREDATE date,
+	SAL float(7,2),
+	COMM float(7,2),
+	DEPTNO int(2));
+
+	insert into emp values
+	(7839, 'KING', 'MANAGER', '1991-11-17', 5000, NULL, 10),
+	(7698, 'BLAKE', 'CLERK', '1981-05-01', 2850, NULL, 30),
+	(7782, 'CLARK', 'MANAGER', '1981-06-09', 2450, NULL, 10),
+	(7566, 'JONES', 'CLERK', '1981-04-02', 2975, NULL, 20),
+	(7654, 'MARTIN', 'SALESMAN', '1981-09-28', 1250, 1400, 30),
+	(7499, 'ALLEN', 'SALESMAN', '1981-02-20', 1600, 300, 30);
+
+	select * from emp;
+-----------------------------------------------------------------------------
+3>  select * from emp 
+	where sal between 2500 and 5000;
+-----------------------------------------------------------------------------
+4>	select ENAME from emp 
+	order by ename
+	desc;
+-----------------------------------------------------------------------------
+5>	select lower(job) from emp; 
+-----------------------------------------------------------------------------
+6>	select ename,length(ename) from emp;
+-----------------------------------------------------------------------------
+7>	select deptno, count(deptno) from dept;
+-----------------------------------------------------------------------------
+8>	select dname, ename from dept, emp
+	where dept.dname = emp.ename;
+-----------------------------------------------------------------------------
+9>	select Locate('AR',ename) from emp;
+-----------------------------------------------------------------------------
+10> select *, sal*0.2 as HRA from emp;
+-----------------------------------------------------------------------------
+
+Section II
+
+1>  delimiter //
+	create procedure PROC1(string1 varchar, string2 varchar)
+	begin
+		
+	end; //
+	delimiter ;
+
+2>	delimiter //
+	create function FUNC1()
+	begin
+
+	end; //
+	delimiter ;
